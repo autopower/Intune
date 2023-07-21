@@ -252,7 +252,8 @@ Try {
         Write-Log "Installing: [$dirFiles\rustdesk-1.2.1-x86_64.exe]"
         Start-Process cmd.exe -ArgumentList '/c', """$dirFiles\rustdesk-1.2.1-x86_64.exe"" --silent-install" -NoNewWindow
         $finishJob = $false
-        # this is workaroudn because rust desk installation fires instance of rustdesk and can't finish
+
+        # this is workaround because rust desk installation fires instance of rustdesk and can't finish
         while (-not $finishJob) {
             Write-Log "Sleeping 20 sec"
             Start-Sleep -Seconds 20
